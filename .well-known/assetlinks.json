@@ -1,0 +1,8 @@
+[{
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "io.github.jalesh_poop.twa",
+        "sha256_cert_fingerprints": ["A5:27:50:60:A3:29:2E:3E:68:AD:6F:34:D7:F3:F6:8C:97:9B:C5:F7:2F:0E:26:AE:F7:11:FD:80:B9:DF:8C:44"]
+      }
+    }]
