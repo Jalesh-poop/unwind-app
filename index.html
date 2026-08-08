@@ -375,12 +375,12 @@
     flying = true;
     const power = Math.min(Math.hypot(dx, dy) / MAX_PULL, 1);
     const launchAngle = Math.atan2(-dy, -dx);
-    const speed = 900 + power * 700;
+    const speed = 520 + power * 220;
 
     const startX = padX + dx;
     const startY = padY + dy;
     let vx = Math.cos(launchAngle) * speed;
-    let vy = Math.sin(launchAngle) * speed - 250 - power * 200;
+    let vy = Math.sin(launchAngle) * speed - 160 - power * 140;
 
     let x = startX, y = startY;
     let t0 = null;
@@ -420,7 +420,7 @@
         ctx.fill();
       });
 
-      if (!quoteShown && elapsed > 0.55) {
+      if (!quoteShown && elapsed > 0.3) {
         quoteShown = true;
         quoteEl.textContent = quote;
         quoteEl.style.transition = 'opacity 1.1s ease';
@@ -429,7 +429,7 @@
 
       const offscreen = x < -80 || x > window.innerWidth + 80 || y < -80 || y > window.innerHeight + 80;
 
-      if (elapsed < 3.4 && !offscreen) {
+      if (elapsed < 3.4 && (elapsed < 1.3 || !offscreen)) {
         requestAnimationFrame(frame);
       } else {
         endFlight();
